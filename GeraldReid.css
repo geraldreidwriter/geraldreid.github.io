@@ -9,12 +9,12 @@
 
   /* Default (light) theme */
   --bg: #fff;
-  --accent-bg: #f5f7ff;
+  --accent-bg: #d9d9d9;
   --text: #212121;
   --text-light: #585858;
   --border: #898EA4;
   --accent: #0d47a1;
-  --accent-hover: #1266e2;
+  --accent-hover: #e28812;
   --accent-text: var(--bg);
   --code: #d81b60;
   --preformatted: #444;
