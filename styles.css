@@ -1,0 +1,195 @@
+/* Base setup and accessibility */
+html {
+  box-sizing: border-box;
+  font-size: 100%; /* Using percentages for better accessibility/scaling */
+  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* ====== HEADER & NAVBAR ====== */
+header {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e2e2;
+  position: sticky; /* Keeps the header at the top when scrolling (optional) */
+  top: 0;
+  z-index: 10; /* Ensures the header stays above other content */
+}
+
+/* A container inside the header to center content and control max width */
+.header-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Site logo or title */
+.header-logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333333;
+  text-decoration: none; /* In case it's linked */
+}
+
+/* Navigation menu */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Space between nav items */
+}
+
+/* Nav links */
+nav a {
+  color: #333333;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+}
+
+/* Focus outline for accessibility */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px dotted #1a8917;
+  outline-offset: 4px;
+}
+
+/* ====== BODY ====== */
+body {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;  /* Medium uses fairly bold headlines */
+  line-height: 1.2;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+/* Paragraphs and text elements */
+p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.8; /* Slightly larger line height for readability */
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* Links in text */
+a {
+  color: #1a8917;     /* Medium-esque green for in-article links */
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* Blockquotes */
+blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid #e2e2e2;
+  color: #666666;
+  font-style: italic;
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* ====== RESPONSIVE BREAKPOINTS ====== */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 1rem;
+  }
+  
+  nav {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+  }
+  
+  h4 {
+    font-size: 1.2rem;
+  }
+  
+  h5 {
+    font-size: 1rem;
+  }
+  
+  h6 {
+    font-size: 0.875rem;
+  }
+}
