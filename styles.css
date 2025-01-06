@@ -3,7 +3,6 @@ html {
   box-sizing: border-box;
   font-size: 100%; /* Using percentages for better accessibility/scaling */
   line-height: 1.6;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 *,
@@ -24,7 +23,6 @@ header {
   z-index: 10; /* Ensures the header stays above other content */
 }
 
-/* A container inside the header to center content and control max width */
 .header-container {
   max-width: 1080px;
   margin: 0 auto;
@@ -40,6 +38,7 @@ header {
   font-weight: 700;
   color: #333333;
   text-decoration: none; /* In case it's linked */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 /* Navigation menu */
@@ -55,6 +54,7 @@ nav a {
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 nav a:hover,
@@ -78,14 +78,17 @@ body {
   padding: 2rem;
   background-color: #ffffff;
   color: #333333;
+  /* Use a serif font for body text. Fallback to Georgia if custom font is unavailable. */
+  font-family: 'Merriweather', Georgia, serif;
 }
 
-/* Headings */
+/* Headings (keeping these sans-serif) */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;  /* Medium uses fairly bold headlines */
+  font-weight: 700;
   line-height: 1.2;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -141,12 +144,15 @@ blockquote {
   border-left: 4px solid #e2e2e2;
   color: #666666;
   font-style: italic;
+  /* Ensure blockquotes also use the same serif font */
+  font-family: 'Merriweather', Georgia, serif;
 }
 
 /* Lists */
 ul, ol {
   margin-bottom: 1.5rem;
   padding-left: 2rem;
+  font-family: inherit;
 }
 
 li {
@@ -156,40 +162,4 @@ li {
 /* ====== RESPONSIVE BREAKPOINTS ====== */
 @media (max-width: 768px) {
   .header-container {
-    padding: 1rem;
-  }
-  
-  nav {
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 600px) {
-  body {
-    padding: 1rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-  
-  h2 {
-    font-size: 1.6rem;
-  }
-  
-  h3 {
-    font-size: 1.4rem;
-  }
-  
-  h4 {
-    font-size: 1.2rem;
-  }
-  
-  h5 {
-    font-size: 1rem;
-  }
-  
-  h6 {
-    font-size: 0.875rem;
-  }
-}
+   
