@@ -1,15 +1,13 @@
 /*!
  * Gerald Reid - Writer CSS
  * Author: Gerald Reid (c) 2025
- * License: MIT (or choose your preferred license)
+ * License: MIT
  *
  * Description:
  *  - A clean, text-focused layout inspired by simple, static sites with beautiful typography
  *  - Serif body text, sans-serif headings
  *  - Responsive and accessible design
  */
- 
-/* Your actual CSS rules start here */
 
 /* Base setup and accessibility */
 html {
@@ -53,9 +51,10 @@ header {
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; 
 }
 
+/* Logo + Title */
 .header-logo {
   display: flex;
   align-items: center;
@@ -66,19 +65,25 @@ header {
   font-weight: 700;
 }
 
-/* Optional: If you want text next to the SVG, you could style it like so:
-.header-logo span {
-  margin-left: 0.5rem;
+/* Space between SVG and text */
+.header-logo svg {
+  margin-right: 0.5rem; /* Add a gap so the logo and text aren't touching */
 }
-*/
+
+/* Optionally, adjust .site-title if you want different styling */
+.site-title {
+  /* You can tweak font-size or font-weight here if desired */
+  /* font-size: 1.25rem; */
+  /* font-weight: 700; */
+}
 
 /* Hamburger checkbox toggle */
 .nav-toggle {
-  display: none; /* Hide the actual checkbox */
+  display: none;
 }
 
 .hamburger {
-  display: none; /* Hide hamburger by default on larger screens */
+  display: none; 
   cursor: pointer;
   width: 2rem;
   height: 2rem;
@@ -141,8 +146,9 @@ body {
   padding: 2rem;
   background-color: #ffffff;
   color: #333333;
-  /* Serif font for body content */
+  /* LOWER the line-height slightly, e.g. from 1.8 to 1.7 */
   font-family: 'Merriweather', Georgia, serif;
+  line-height: 1.7; /* <-- Reduced from 1.8 */
 }
 
 /* Headings in sans-serif */
@@ -164,11 +170,14 @@ h6 { font-size: 1rem; }
 p {
   font-size: 1rem;
   margin-bottom: 1.5rem;
-  line-height: 1.8; 
+  /* STILL a good vertical gap between paragraphs */
+  /* Indent the first line of each paragraph */
+  text-indent: 1.5em; /* <-- Indent first line */
 }
 
+/* If you want an extra top margin after the first paragraph, keep this: */
 p + p {
-  margin-top: 1rem; /* If you want even more spacing just above paragraphs */
+  margin-top: 1rem;
 }
 
 strong {
@@ -177,7 +186,7 @@ strong {
 
 /* In-article links */
 a {
-  color: #1a8917; /* Medium-esque green for text links */
+  color: #1a8917; 
   text-decoration: none;
 }
 
@@ -213,10 +222,9 @@ li {
     display: block;
   }
 
-  /* Hide nav menu by default, show it below. */
   .nav-menu {
     position: absolute;
-    top: 4.5rem; /* just below header */
+    top: 4.5rem; 
     right: 2rem;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -242,7 +250,7 @@ li {
     transform: rotate(45deg) translateY(7px);
   }
   .nav-toggle:checked + .hamburger span:nth-of-type(2) {
-    opacity: 0; /* hide middle line */
+    opacity: 0;
   }
   .nav-toggle:checked + .hamburger span:nth-of-type(3) {
     transform: rotate(-45deg) translateY(-7px);

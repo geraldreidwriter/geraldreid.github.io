@@ -57,43 +57,42 @@
 <body>
 
   <!-- Header & Nav -->
-  <header>
-    <div class="header-container">
-      <!-- Logo Placeholder -->
-      <a href="/" class="header-logo">
-        <!-- Option 1: Inline SVG -->
-        <!-- This example is a simple placeholder shape. Replace with your own SVG. -->
-        <svg 
-          width="40" 
-          height="40" 
-          viewBox="0 0 100 100" 
-          aria-hidden="true" 
-          fill="currentColor"
-        >
-          <circle cx="50" cy="50" r="40" />
-        </svg>
-        <span class="visually-hidden">MySite Logo</span>
-      </a>
+ <header>
+  <div class="header-container">
+    <!-- Combine Logo + Text -->
+    <a href="/" class="header-logo">
+      <!-- Inline SVG Logo (example) -->
+      <svg 
+        width="40" 
+        height="40" 
+        viewBox="0 0 100 100" 
+        aria-hidden="true" 
+        fill="currentColor"
+      >
+        <circle cx="50" cy="50" r="40" />
+      </svg>
+      <!-- The site title text -->
+      <span class="site-title">Gerald Reid - Writer</span>
+    </a>
 
-      <!-- Hamburger Toggle (checkbox hack) -->
-      <input type="checkbox" id="nav-toggle" class="nav-toggle"/>
-      <label for="nav-toggle" class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span class="visually-hidden">Menu</span>
-      </label>
+    <!-- Hamburger & Nav (unchanged) -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="visually-hidden">Menu</span>
+    </label>
 
-      <!-- Navigation -->
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#stories">Stories</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#stories">Stories</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
   <!-- Main Content -->
   <main>
