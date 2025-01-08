@@ -1,7 +1,20 @@
+/*!
+ * Gerald Reid - Writer CSS
+ * Author: Gerald Reid (c) 2025
+ * License: MIT (or choose your preferred license)
+ *
+ * Description:
+ *  - A clean, text-focused layout inspired by simple, static sites with beautiful typography
+ *  - Serif body text, sans-serif headings
+ *  - Responsive and accessible design
+ */
+ 
+/* Your actual CSS rules start here */
+
 /* Base setup and accessibility */
 html {
   box-sizing: border-box;
-  font-size: 100%; /* Using percentages for better accessibility/scaling */
+  font-size: 100%; /* using percentages for better accessibility/scaling */
   line-height: 1.6;
 }
 
@@ -13,14 +26,25 @@ html {
   padding: 0;
 }
 
+/* Visually hidden class for screen-reader text */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; 
+  width: 1px; 
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; 
+  border: 0;
+}
+
 /* ====== HEADER & NAVBAR ====== */
 header {
   width: 100%;
   background-color: #ffffff;
   border-bottom: 1px solid #e2e2e2;
-  position: sticky; /* Keeps the header at the top when scrolling (optional) */
+  position: sticky; /* Optional: keeps header at top when scrolling */
   top: 0;
-  z-index: 10; /* Ensures the header stays above other content */
+  z-index: 10; /* Ensures header is on top */
 }
 
 .header-container {
@@ -32,24 +56,63 @@ header {
   justify-content: space-between;
 }
 
-/* Site logo or title */
 .header-logo {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #333333;
-  text-decoration: none; /* In case it's linked */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-
-/* Navigation menu */
-nav {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Space between nav items */
+  color: #333333;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
-/* Nav links */
-nav a {
+/* Optional: If you want text next to the SVG, you could style it like so:
+.header-logo span {
+  margin-left: 0.5rem;
+}
+*/
+
+/* Hamburger checkbox toggle */
+.nav-toggle {
+  display: none; /* Hide the actual checkbox */
+}
+
+.hamburger {
+  display: none; /* Hide hamburger by default on larger screens */
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger span {
+  display: block;
+  width: 2rem;
+  height: 2px;
+  margin-bottom: 5px;
+  background-color: #333333;
+  transition: 0.3s;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-menu li {
+  margin: 0;
+}
+
+.nav-menu a {
   color: #333333;
   text-decoration: none;
   font-size: 1rem;
@@ -57,8 +120,8 @@ nav a {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-nav a:hover,
-nav a:focus {
+.nav-menu a:hover,
+.nav-menu a:focus {
   text-decoration: underline;
 }
 
@@ -78,11 +141,11 @@ body {
   padding: 2rem;
   background-color: #ffffff;
   color: #333333;
-  /* Use a serif font for body text. Fallback to Georgia if custom font is unavailable. */
+  /* Serif font for body content */
   font-family: 'Merriweather', Georgia, serif;
 }
 
-/* Headings (keeping these sans-serif) */
+/* Headings in sans-serif */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
@@ -91,44 +154,30 @@ h1, h2, h3, h4, h5, h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-h1 {
-  font-size: 2.4rem;
-}
+h1 { font-size: 2.4rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
 
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.6rem;
-}
-
-h4 {
-  font-size: 1.4rem;
-}
-
-h5 {
-  font-size: 1.2rem;
-}
-
-h6 {
-  font-size: 1rem;
-}
-
-/* Paragraphs and text elements */
 p {
   font-size: 1rem;
   margin-bottom: 1.5rem;
-  line-height: 1.8; /* Slightly larger line height for readability */
+  line-height: 1.8; 
+}
+
+p + p {
+  margin-top: 1rem; /* If you want even more spacing just above paragraphs */
 }
 
 strong {
   font-weight: 700;
 }
 
-/* Links in text */
+/* In-article links */
 a {
-  color: #1a8917;     /* Medium-esque green for in-article links */
+  color: #1a8917; /* Medium-esque green for text links */
   text-decoration: none;
 }
 
@@ -144,7 +193,6 @@ blockquote {
   border-left: 4px solid #e2e2e2;
   color: #666666;
   font-style: italic;
-  /* Ensure blockquotes also use the same serif font */
   font-family: 'Merriweather', Georgia, serif;
 }
 
@@ -152,14 +200,64 @@ blockquote {
 ul, ol {
   margin-bottom: 1.5rem;
   padding-left: 2rem;
-  font-family: inherit;
 }
 
 li {
   margin-bottom: 0.5rem;
 }
 
-/* ====== RESPONSIVE BREAKPOINTS ====== */
+/* ====== MEDIA QUERIES ====== */
 @media (max-width: 768px) {
-  .header-container {
-   
+  /* Show hamburger, hide normal menu layout */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide nav menu by default, show it below. */
+  .nav-menu {
+    position: absolute;
+    top: 4.5rem; /* just below header */
+    right: 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    padding: 1rem;
+    display: none;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* When nav-toggle is checked, display the menu */
+  .nav-toggle:checked + .hamburger + .nav-menu {
+    display: flex;
+  }
+
+  /* Rotate/transform hamburger lines when open */
+  .nav-toggle:checked + .hamburger span:nth-of-type(1) {
+    transform: rotate(45deg) translateY(7px);
+  }
+  .nav-toggle:checked + .hamburger span:nth-of-type(2) {
+    opacity: 0; /* hide middle line */
+  }
+  .nav-toggle:checked + .hamburger span:nth-of-type(3) {
+    transform: rotate(-45deg) translateY(-7px);
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.4rem; }
+  h4 { font-size: 1.2rem; }
+  h5 { font-size: 1rem; }
+  h6 { font-size: 0.875rem; }
+}
