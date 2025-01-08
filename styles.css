@@ -223,6 +223,49 @@ li {
   margin-bottom: 0.5rem;
 }
 
+/* FOOTER STYLES */
+footer {
+  width: 100%;
+  background-color: #f9f9f9; /* or any light background you prefer */
+  border-top: 1px solid #e2e2e2;
+  /* Not strictly necessary, but visually matches your header style */
+}
+
+.footer-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1rem 2rem; 
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  /* This keeps text on the left, icons on the right */
+}
+
+.footer-text {
+  font-family: 'Merriweather', Georgia, serif; /* Same body font? */
+  font-size: 0.9rem; /* Slightly smaller text if you like */
+  color: #333333;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between icons */
+}
+
+.footer-social img {
+  width: 24px;  /* adjust icon size as desired */
+  height: auto;
+  display: block;
+  /* If your icons have a background, you can style it here. */
+}
+
+.footer-social a:hover img,
+.footer-social a:focus img {
+  /* Optional: add a hover or focus effect on icons */
+  opacity: 0.8;
+}
+
 /* ====== MEDIA QUERIES ====== */
 @media (max-width: 768px) {
   /* Show hamburger, hide normal menu layout */
