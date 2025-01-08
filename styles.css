@@ -238,6 +238,7 @@ footer {
   color: #333333;
   margin: 0;
   line-height: 1; /* Matches icon alignment */
+  text-indent: 0;
 }
 
 .footer-social {
