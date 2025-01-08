@@ -39,7 +39,7 @@ html {
 header {
   width: 100%;
   background-color: #ffffff;
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: 2px solid #e2e2e2;
   position: sticky; /* Optional: keeps header at top when scrolling */
   top: 0;
   z-index: 10; /* Ensures header is on top */
