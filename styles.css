@@ -203,6 +203,17 @@ a:focus {
   text-decoration: underline;
 }
 
+/* Visually Hidden */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px); /* Ensures the element is clipped */
+  white-space: nowrap; /* Prevents text wrapping */
+  border: 0;
+}
+
 /* Blockquotes */
 blockquote {
   margin: 1.5rem 0;
