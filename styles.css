@@ -185,6 +185,7 @@ p {
 /* If you want an extra top margin after the first paragraph, keep this: */
 p + p {
   margin-top: 1rem;
+  text-indent: 0;
 }
 
 strong {
