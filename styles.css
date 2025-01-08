@@ -65,6 +65,13 @@ header {
   font-weight: 700;
 }
 
+.logo-img {
+  width: 50px;
+  height: auto; 
+  max-width: 100%;
+  display: block;
+}
+
 /* Space between SVG and text */
 .header-logo svg {
   margin-right: 0.5rem; /* Add a gap so the logo and text aren't touching */
