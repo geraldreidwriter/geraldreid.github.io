@@ -82,6 +82,7 @@ header {
   color: #333333;
   text-decoration: none;
   padding: 0; /* Remove padding that could misalign links */
+  margin-top: 10px;
 }
 
 .nav-menu a:hover,
