@@ -1,0 +1,17 @@
+/* Poetry-specific styles */
+article.poem {
+  font-family: 'Merriweather', Georgia, serif; /* Classic serif font for poetry */
+  line-height: 1.8; /* Slightly more spacing for poetic structure */
+  margin: 2rem 0;
+}
+
+.poem-meta {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.poem-body p {
+  margin-bottom: 1rem;
+  text-indent: 2em; /* Indent first lines for poetic style */
+}

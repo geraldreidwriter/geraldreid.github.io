@@ -1,0 +1,17 @@
+/* Story-specific styles */
+article.story {
+  font-family: 'Roboto', Arial, sans-serif; /* Modern sans-serif font for stories */
+  line-height: 1.6;
+  margin: 2rem 0;
+}
+
+.story-meta {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.story-body p {
+  margin-bottom: 1.5rem;
+  text-indent: 0; /* Stories are not indented */
+}
