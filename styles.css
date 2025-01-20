@@ -37,7 +37,7 @@ html {
 /* ====== HEADER & NAVBAR ====== */
 header {
   width: 100%;
-  padding: 1rem 0;
+  padding: 0.5rem 0; /* Reduce header padding for better alignment */
   background-color: #ffffff;
   border-bottom: 2px solid #e2e2e2;
   position: sticky; /* Keeps header at the top when scrolling */
@@ -50,35 +50,38 @@ header {
   margin: 0 auto;
   padding: 0;
   display: flex;
-  align-items: center;
-  justify-content: space-between; 
+  align-items: center; /* Vertically align logo and navigation */
+  justify-content: space-between;
+  height: 70px; /* Optional: Consistent header height */
 }
 
 .logo-img {
   width: 50px;
   height: auto;
   display: block;
-  vertical-align: middle; /* Aligns logo with text */
+  vertical-align: middle; /* Align logo with navigation text */
 }
 
 .nav-menu ul {
   display: flex;
-  gap: 1.5rem;
-  align-items: center; /* Centers nav links vertically */
-  padding: 0;
+  gap: 1.5rem; /* Adds spacing between navigation items */
+  align-items: center; /* Vertically align links */
+  margin: 0; /* Prevent unintended spacing */
+  padding: 0; /* Prevent unintended spacing */
 }
 
 .nav-menu li {
   display: flex;
-  align-items: center;
+  align-items: center; /* Align individual links */
 }
 
 .nav-menu a {
-  line-height: 1; /* Matches logo height */
+  line-height: 1; /* Removes extra spacing within links */
   font-size: 1rem;
   font-weight: 500;
   color: #333333;
   text-decoration: none;
+  padding: 0; /* Remove padding that could misalign links */
 }
 
 .nav-menu a:hover,
