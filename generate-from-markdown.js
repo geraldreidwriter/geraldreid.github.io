@@ -70,8 +70,8 @@ const generatePageFromMarkdown = (markdownFilePath) => {
       <nav class="nav-menu">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/poetry">Poetry</a></li>
-          <li><a href="/stories">Stories</a></li>
+          <li><a href="/poetry/poetry-archive.html">Poetry</a></li>
+          <li><a href="/stories/story-archive">Stories</a></li>
         </ul>
       </nav>
     </div>
@@ -135,8 +135,8 @@ const generateIndexPage = (type, items) => {
       <nav class="nav-menu">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/poetry">Poetry</a></li>
-          <li><a href="/stories">Stories</a></li>
+          <li><a href="/poetry/poetry-archive.html">Poetry</a></li>
+          <li><a href="/stories/story-archive">Stories</a></li>
         </ul>
       </nav>
     </div>
