@@ -1,17 +1,38 @@
-/* Poetry-specific styles */
-article.poem {
-  font-family: 'Merriweather', Georgia, serif; /* Classic serif font for poetry */
-  line-height: 1.8; /* Slightly more spacing for poetic structure */
-  margin: 2rem 0;
+/* General body styles for poetry */
+body {
+  font-family: 'Merriweather', Georgia, serif;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 2rem;
+  line-height: 1.7;
 }
 
-.poem-meta {
+/* Article-specific styling */
+article.poetry {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 1rem;
+  border-left: 4px solid #1a8917;
+  background-color: #ffffff;
+}
+
+/* Hide the extra title */
+article.poetry h1 + h1 {
+  display: none;
+}
+
+/* Date styling */
+.poetry-meta {
   font-size: 0.9rem;
   color: #555;
   margin-bottom: 1rem;
 }
 
-.poem-body p {
+/* Author subtitle styling */
+.poetry-subtitle {
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
+  margin-left: 1rem;
   margin-bottom: 1rem;
-  text-indent: 2em; /* Indent first lines for poetic style */
 }

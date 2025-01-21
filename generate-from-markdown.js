@@ -43,10 +43,14 @@ const generatePageFromMarkdown = (markdownFilePath) => {
     contentIndex[metadata.type] = [];
   }
 
+  const formattedDate = metadata.date
+    ? new Date(metadata.date).toLocaleDateString('en-US', { year: '2-digit', month: 'numeric', day: 'numeric' })
+    : 'Unknown Date';
+
   contentIndex[metadata.type].push({
     title: metadata.title,
     url: getOutputPath(metadata.type, metadata.title).replace('./', '/'),
-    date: metadata.date || 'Unknown Date',
+    date: formattedDate,
   });
 
   const bodyContent = marked.parse(markdown);
@@ -81,7 +85,7 @@ const generatePageFromMarkdown = (markdownFilePath) => {
   <main>
     <article class="${metadata.type}">
       <h1>${metadata.title}</h1>
-      <p class="${metadata.type}-meta">Published on ${metadata.date || 'Unknown Date'}</p>
+      <p class="${metadata.type}-meta">Published on ${formattedDate}</p>
       <div class="${metadata.type}-body">
         ${bodyContent}
       </div>
