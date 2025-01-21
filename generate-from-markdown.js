@@ -168,7 +168,7 @@ const generateIndexPage = (type, items) => {
 
 // Function to generate sitemap
 const generateSitemap = (contentIndex) => {
-  const baseUrl = 'https://yourwebsite.com';
+  const baseUrl = 'https://geraldreidwriter.github.io';
 
   const urls = Object.values(contentIndex)
     .flat()
