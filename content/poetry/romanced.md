@@ -8,8 +8,8 @@ title: Romanced
 
 *By Gerald Reid*
 
-hopeful expectation
-joyous elation
-intermittent frustration
-hopeless stagnation
+hopeful expectation  
+joyous elation  
+intermittent frustration  
+hopeless stagnation  
 husked isolation

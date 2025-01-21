@@ -8,10 +8,10 @@ title: Your Touch Home
 
 *By Gerald Reid*
 
-your touch was home
-warm apple pie
-together at the table
-belonging...
+your touch was home  
+warm apple pie  
+together at the table  
+belonging...  
 and right
 
 now it ruins
