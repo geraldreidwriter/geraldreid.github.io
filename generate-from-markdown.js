@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const marked = require('marked');
 
 // Keep track of poems and stories
@@ -70,8 +71,8 @@ const generatePageFromMarkdown = (markdownFilePath) => {
       <nav class="nav-menu">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/poetry/poetry-archive.html">Poetry</a></li>
-          <li><a href="/stories/story-archive">Stories</a></li>
+          <li><a href="/poetry">Poetry</a></li>
+          <li><a href="/stories">Stories</a></li>
         </ul>
       </nav>
     </div>
@@ -104,10 +105,26 @@ const generatePageFromMarkdown = (markdownFilePath) => {
   console.log(`Generated: ${outputPath}`);
 };
 
+// Function to recursively find .md files in a directory
+const findMarkdownFiles = (dir) => {
+  const files = fs.readdirSync(dir);
+  let markdownFiles = [];
+  files.forEach((file) => {
+    const fullPath = path.join(dir, file);
+    if (fs.statSync(fullPath).isDirectory()) {
+      markdownFiles = markdownFiles.concat(findMarkdownFiles(fullPath)); // Recurse into subdirectory
+    } else if (fullPath.endsWith('.md')) {
+      markdownFiles.push(fullPath); // Add Markdown file
+    }
+  });
+  return markdownFiles;
+};
+
 // Function to generate index pages
 const generateIndexPage = (type, items) => {
   const title = type === 'poetry' ? 'Poetry Archive' : 'Story Archive';
-  const outputPath = `./${type}/${type === 'poetry' ? 'poetry-archive.html' : 'story-archive.html'}`;
+  const fileName = type === 'poetry' ? 'poetry-archive.html' : 'story-archive.html';
+  const outputPath = `./${type}/${fileName}`;
 
   const listItems = items.map(
     (item) => `<li><a href="${item.url}">${item.title}</a> <span class="meta-date">(${item.date})</span></li>`
@@ -135,8 +152,8 @@ const generateIndexPage = (type, items) => {
       <nav class="nav-menu">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/poetry/poetry-archive.html">Poetry</a></li>
-          <li><a href="/stories/story-archive">Stories</a></li>
+          <li><a href="/poetry">Poetry</a></li>
+          <li><a href="/stories">Stories</a></li>
         </ul>
       </nav>
     </div>
@@ -169,7 +186,6 @@ const generateIndexPage = (type, items) => {
 // Function to generate sitemap
 const generateSitemap = (contentIndex) => {
   const baseUrl = 'https://geraldreidwriter.github.io';
-
   const urls = Object.values(contentIndex)
     .flat()
     .map((item) => `
@@ -178,11 +194,6 @@ const generateSitemap = (contentIndex) => {
     <lastmod>${new Date().toISOString()}</lastmod>
   </url>
   `).join('\n');
-
-  if (!urls.trim()) {
-    console.warn('No content available for sitemap. Skipping sitemap generation.');
-    return;
-  }
 
   const sitemapTemplate = `
 <?xml version="1.0" encoding="UTF-8"?>
@@ -195,13 +206,15 @@ ${urls}
   console.log('Generated: ./sitemap.xml');
 };
 
-// Process Markdown files and generate pages
-generatePageFromMarkdown('./content/poetry/my-poem.md');
-generatePageFromMarkdown('./content/stories/my-story.md');
+// Main function to process all .md files and generate pages
+const main = () => {
+  const markdownFiles = findMarkdownFiles('./content');
+  markdownFiles.forEach((file) => generatePageFromMarkdown(file));
 
-// Generate index pages
-generateIndexPage('poetry', contentIndex.poetry);
-generateIndexPage('stories', contentIndex.stories);
+  generateIndexPage('poetry', contentIndex.poetry);
+  generateIndexPage('stories', contentIndex.stories);
 
-// Generate sitemap
-generateSitemap(contentIndex);
+  generateSitemap(contentIndex);
+};
+
+main();
