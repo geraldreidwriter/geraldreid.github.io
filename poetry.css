@@ -8,10 +8,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height for centering */
+  min-height: 100vh; /* Ensure it takes up the full viewport height */
 }
 
-/* Navbar styles */
+/* Sticky Navbar */
 header {
   width: 100%;
   position: sticky;
@@ -47,32 +47,39 @@ header {
   text-decoration: underline;
 }
 
-/* Poem container */
+/* Poem Container */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* Adjust for header height */
+  padding: 2rem;
+}
+
 article.poetry {
   max-width: 680px;
   padding: 2rem;
-  background-color: #ffffff; /* Pure white background for contrast */
+  background-color: #ffffff; /* Pure white background */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for focus */
   border-radius: 8px; /* Rounded corners */
   text-align: center; /* Center text alignment */
-  margin: auto;
 }
 
-/* Title styling */
+/* Title Styling */
 article.poetry h1 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
-/* Date styling */
+/* Date Styling */
 .poetry-meta {
   font-size: 0.9rem;
   color: #777; /* Light gray */
   margin-bottom: 1rem;
 }
 
-/* Author styling */
+/* Author Styling */
 .poetry-subtitle {
   font-size: 0.85rem;
   color: #555; /* Slightly darker gray */
@@ -80,17 +87,18 @@ article.poetry h1 {
   margin-bottom: 2rem;
 }
 
-/* Poem text */
+/* Poem Text */
 .poetry-body p {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 1rem;
 }
 
-/* Footer styles */
+/* Footer Styles */
 footer {
-  margin-top: 2rem;
+  width: 100%;
   text-align: center;
   font-size: 0.9rem;
   color: #999;
+  margin-top: 2rem;
 }
