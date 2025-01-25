@@ -1,5 +1,6 @@
 /* General body styles for poetry */
 body {
+  width: 100%;
   font-family: 'Merriweather', Georgia, serif;
   background-color: #f5f5f5; /* Light off-white */
   color: #333;
