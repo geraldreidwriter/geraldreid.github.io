@@ -86,6 +86,7 @@ const generatePageFromMarkdown = (markdownFilePath) => {
     <article class="${metadata.type}">
       <h1>${metadata.title}</h1>
       <p class="${metadata.type}-meta">Published on ${formattedDate}</p>
+      <p class="poetry-subtitle">By Gerald Reid</p>
       <div class="${metadata.type}-body">
         ${bodyContent}
       </div>
@@ -93,13 +94,7 @@ const generatePageFromMarkdown = (markdownFilePath) => {
   </main>
 
   <footer>
-    <div class="footer-container">
-      <p class="footer-text">© 2025 Gerald Reid</p>
-      <div class="footer-social">
-        <a href="https://medium.com/" aria-label="Medium" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-medium"></i></a>
-        <a href="https://instagram.com/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-      </div>
-    </div>
+    <p>© 2025 Gerald Reid</p>
   </footer>
 </body>
 </html>

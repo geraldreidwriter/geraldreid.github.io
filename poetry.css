@@ -1,38 +1,96 @@
 /* General body styles for poetry */
 body {
   font-family: 'Merriweather', Georgia, serif;
-  background-color: #f9f9f9;
+  background-color: #f5f5f5; /* Softer off-white background */
   color: #333;
-  padding: 2rem;
-  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height for centering */
 }
 
-/* Article-specific styling */
-article.poetry {
-  max-width: 680px;
+/* Navbar styles */
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e2e2;
+  z-index: 10;
+}
+
+.header-container {
+  max-width: 1080px;
   margin: 0 auto;
   padding: 1rem;
-  border-left: 4px solid #1a8917;
-  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Hide the extra title */
-article.poetry h1 + h1 {
-  display: none;
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-menu a:hover {
+  text-decoration: underline;
+}
+
+/* Poem container */
+article.poetry {
+  max-width: 680px;
+  padding: 2rem;
+  background-color: #ffffff; /* Pure white background for contrast */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for focus */
+  border-radius: 8px; /* Rounded corners */
+  text-align: center; /* Center text alignment */
+  margin: auto;
+}
+
+/* Title styling */
+article.poetry h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 /* Date styling */
 .poetry-meta {
   font-size: 0.9rem;
-  color: #555;
+  color: #777; /* Light gray */
   margin-bottom: 1rem;
 }
 
-/* Author subtitle styling */
+/* Author styling */
 .poetry-subtitle {
   font-size: 0.85rem;
-  color: #888;
+  color: #555; /* Slightly darker gray */
   font-style: italic;
-  margin-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Poem text */
+.poetry-body p {
+  font-size: 1.1rem;
+  line-height: 1.8;
   margin-bottom: 1rem;
+}
+
+/* Footer styles */
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #999;
 }
