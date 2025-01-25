@@ -16,6 +16,18 @@ body {
   align-items: center;     /* Vertical center */
 }
 
+/* Scott Updates */
+
+.header-container {
+  display: none;
+}
+
+footer {
+  diplay: none;
+}
+
+
+
 /* Main Poem Container */
 main {
   max-width: 680px;
